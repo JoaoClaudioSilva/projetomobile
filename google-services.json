@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "201925327039",
+    "project_id": "mobile-e1dd4",
+    "storage_bucket": "mobile-e1dd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201925327039:android:05f7c25da7436c939b2e0a",
+        "android_client_info": {
+          "package_name": "com.joaoc.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq6btH-5bXxfpYR7bjjfcUBrpDaStB0fM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
