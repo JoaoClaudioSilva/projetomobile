@@ -11,7 +11,7 @@ const ColetaDados = (props) => {
 
   return (
     <View style={EstiloApp.background}>
-      <Text style={{fontSize: 48, color: '#FFFFFF', textAlign: 'center'}}>O que você achou do {selectedCard.nome}?</Text>
+      <Text style={EstiloApp.textPrincipal}>O que você achou do {selectedCard.nome}?</Text>
       <View style={EstiloApp.menu}>
         <Opcao imagem={Icons.Pessimo} onPress={() => model.incPesquisa(selectedCard.id, 0)}/>
         <Opcao imagem={Icons.Ruim}/>

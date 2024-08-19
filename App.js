@@ -15,6 +15,7 @@ import NovaConta from './src/screens/NovaConta';
 import Login from './src/screens/Login';
 import Relatorio from './src/screens/Relatorio';
 import ColetaDados from './src/screens/ColetaDados';
+import Agradecimento from './src/screens/Agradecimento';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -39,6 +40,7 @@ const MainStack = ({ navigation }) => (
         <Stack.Screen name="Modificar Pesquisa" component={Modificar} options={{title: 'Modificar Pesquisa', headerStyle: { backgroundColor: '#2B1D62' }, headerTintColor: 'white' }}/>
         <Stack.Screen name="Relatório" component={Relatorio} options={{title: 'Relatório', headerStyle: { backgroundColor: '#2B1D62' }, headerTintColor: 'white' }}/>
         <Stack.Screen name="Coletar Dados" component={ColetaDados} options={{title: 'Coletar Dados', headerStyle: { backgroundColor: '#2B1D62' }, headerTintColor: 'white' }}/>
+        <Stack.Screen name="Agradecimento" component={Agradecimento} options={{title: 'Agradecimento', headerStyle: { backgroundColor: '#2B1D62' }, headerTintColor: 'white' }}/>
     </Stack.Navigator>
 );
 

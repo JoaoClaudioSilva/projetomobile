@@ -23,7 +23,6 @@ async function incPesquisa(uid, index) {
 
   ratings[index] = ratings[index] + 1;
 
-  console.log(ratings)
   await updateDoc(refDoc, {
     ratings: ratings,
   })
@@ -39,7 +38,6 @@ async function addPesquisas(obj, urlFoto) {
   uploadBytes(imageRef, blob, { contentType: 'image/jpeg' })
   .then(
     () => {
-      console.log('Sucesso');
       getDownloadURL(imageRef)
         .then(
           (url) => {

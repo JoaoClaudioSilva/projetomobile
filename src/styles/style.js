@@ -36,6 +36,11 @@ const EstiloApp = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#372775',
     },
+    textPrincipal: {
+        fontSize: 48,
+        color: '#FFFFFF',
+        textAlign: 'center',
+    }
 });
 
 export default EstiloApp;
