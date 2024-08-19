@@ -56,4 +56,8 @@ async function updatePesquisas(uid, novoObj) {
   return await updateDoc(doc(db, 'pesquisas', uid), novoObj);
 }
 
-export default { getPesquisas, addPesquisas, updatePesquisas, incPesquisa };
+async function deletePesquisas(uid) {
+  return await deleteDoc(doc(db, 'pesquisas', uid));
+}
+
+export default { getPesquisas, addPesquisas, updatePesquisas, incPesquisa, deletePesquisas };
