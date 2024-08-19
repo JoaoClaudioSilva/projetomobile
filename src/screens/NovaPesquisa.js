@@ -61,7 +61,7 @@ const NovaPesquisa = () => {
 
                         <Botao cor="#37BD6D" tamanho={34} conteudo="CAPTURAR IMAGEM" onPress={() => capturarImagem()}/>
 
-                        <Botao cor="#37BD6D" tamanho={34} conteudo="CADASTRAR" onPress={() => model.addPesquisas({ nome: nome, data: inputDate}, urlFoto)}/>
+                        <Botao cor="#37BD6D" tamanho={34} conteudo="CADASTRAR" onPress={() => model.addPesquisas({ nome: nome, data: inputDate, ratings: [0,0,0,0,0]}, urlFoto)}/>
 
 
                     </View>

@@ -14,10 +14,10 @@ const ColetaDados = (props) => {
       <Text style={EstiloApp.textPrincipal}>O que você achou do {selectedCard.nome}?</Text>
       <View style={EstiloApp.menu}>
         <Opcao imagem={Icons.Pessimo} onPress={() => model.incPesquisa(selectedCard.id, 0)}/>
-        <Opcao imagem={Icons.Ruim}/>
-        <Opcao imagem={Icons.Neutro}/>
-        <Opcao imagem={Icons.Bom}/>
-        <Opcao imagem={Icons.Excelente}/>
+        <Opcao imagem={Icons.Ruim} onPress={() => model.incPesquisa(selectedCard.id, 1)}/>
+        <Opcao imagem={Icons.Neutro} onPress={() => model.incPesquisa(selectedCard.id, 2)}/>
+        <Opcao imagem={Icons.Bom} onPress={() => model.incPesquisa(selectedCard.id, 3)}/>
+        <Opcao imagem={Icons.Excelente} onPress={() => model.incPesquisa(selectedCard.id, 4)}/>
       </View>
     </View>
   );

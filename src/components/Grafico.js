@@ -7,11 +7,11 @@ class PieChartWithDifferentArcs extends React.PureComponent {
   renderLegend = () => {
     const { ratings } = this.props;
     const data = [
-      { key: "Péssimo", svg: { fill: "#D71616" } },
-      { key: "Ruim", svg: { fill: "#FF360A" } },
-      { key: "Neutro", svg: { fill: "#FFC632" } },
-      { key: "Bom", svg: { fill: "#37BD6D" } },
-      { key: "Excelente", svg: { fill: "#25BC22" } },
+      { key: "Excelente", svg: { fill: "#F1CE7E" } },
+      { key: "Bom", svg: { fill: "#6994FE" } },
+      { key: "Neutro", svg: { fill: "#5FCDA4" } },
+      { key: "Ruim", svg: { fill: "#EA7288" } },
+      { key: "Péssimo", svg: { fill: "#53D8D8" } },
     ];
 
     return (
@@ -33,31 +33,31 @@ class PieChartWithDifferentArcs extends React.PureComponent {
       {
         key: "Péssimo",
         value: ratings[0],
-        svg: { fill: "#D71616" },
+        svg: { fill: "#53D8D8" },
         arc: { outerRadius: "80%", cornerRadius: 0 },
       },
       {
         key: "Ruim",
         value: ratings[1],
-        svg: { fill: "#FF360A" },
+        svg: { fill: "#6994FE" },
         arc: { outerRadius: "80%" },
       },
       {
         key: "Neutro",
         value: ratings[2],
-        svg: { fill: "#FFC632" },
+        svg: { fill: "#5FCDA4" },
         arc: { outerRadius: "80%" },
       },
       {
         key: "Bom",
         value: ratings[3],
-        svg: { fill: "#37BD6D" },
+        svg: { fill: "#EA7288" },
         arc: { outerRadius: "80%" },
       },
       {
         key: "Excelente",
         value: ratings[4],
-        svg: { fill: "#25BC22" },
+        svg: { fill: "#F1CE7E" },
         arc: { outerRadius: "80%" },
       },
     ];
