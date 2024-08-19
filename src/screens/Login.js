@@ -7,16 +7,19 @@ import Botao from '../components/Botao';
 import EstiloApp from '../styles/style';
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth_mod } from '../firebase/config';
-
+import { useDispatch } from 'react-redux'
+import { reducerSetLoginSlice } from '../components/redux/loginSlice';
 
 
 const Login = (props) => {
 
+    const dispatch = useDispatch()
 
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
 
     const goTo = (Tela) => {
+        dispatch(reducerSetLoginSlice({ email: email, senha: password }))
         props.navigation.navigate(Tela);
     };
 

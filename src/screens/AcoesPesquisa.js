@@ -6,10 +6,9 @@ import * as Icons from '../icons/icons';
 import EstiloApp from '../styles/style';
 
 const AcoesPesquisa = (props) => {
-    const { selectedCard } = props.route.params;
 
     const handlePress = (titulo) => {
-        props.navigation.navigate(titulo, {selectedCard});
+        props.navigation.navigate(titulo);
     };
 
     return (

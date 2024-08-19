@@ -16,6 +16,8 @@ import Login from './src/screens/Login';
 import Relatorio from './src/screens/Relatorio';
 import ColetaDados from './src/screens/ColetaDados';
 import Agradecimento from './src/screens/Agradecimento';
+import { Provider } from "react-redux";
+import { store } from "./src/components/redux/store"
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -46,13 +48,15 @@ const MainStack = ({ navigation }) => (
 
 const App = () => {
     return (
+        <Provider store={store}>
         <NavigationContainer>
-            <Drawer.Navigator initialRouteName="MainStack">
-                <Drawer.Screen name="MainStack" component={MainStack} options={{ headerShown: false }} />
-                <Drawer.Screen name="Perfil" component={Login} />
-                <Drawer.Screen name="Sair" component={Login} />
-            </Drawer.Navigator>
+          <Drawer.Navigator initialRouteName="MainStack">
+            <Drawer.Screen name="MainStack" component={MainStack} options={{ headerShown: false }} />
+            <Drawer.Screen name="Perfil" component={Login} />
+            <Drawer.Screen name="Sair" component={Login} />
+          </Drawer.Navigator>
         </NavigationContainer>
+      </Provider>
     );
 };
 

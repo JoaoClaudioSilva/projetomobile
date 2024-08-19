@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useState } from 'react';
 import React from 'react';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
-
+import { useSelector } from 'react-redux';
 
 import model from '../firebase/model';
 import Botao from '../components/Botao';
@@ -15,25 +15,7 @@ import EstiloApp from '../styles/style';
 const ModificarPesquisa = (props) => {
     const [inputDate, setInputDate] = useState(undefined);
     const [nome, setNome] = useState('');
-    const [urlFoto, setUrlFoto] = useState('');
-    const [foto, setFoto] = useState();
-
-    const { selectedCard } = props.route.params;
-
-    const capturarImagem = () => {
-        launchCamera({ mediaType: 'photo', cameraType: 'back', quality: 1 })
-        .then(
-            (result) => {
-                setUrlFoto(result.assets[0].uri);
-                setFoto(result.assets[0]);
-            }
-        )
-        .catch(
-            (err) => {
-                console.log(JSON.stringify(err));
-            }
-        );
-    };
+    const id = useSelector((state) => state.selected_card.id);
 
     return (
         <SafeAreaProvider>
@@ -42,7 +24,7 @@ const ModificarPesquisa = (props) => {
 
                     <View name="Nome">
                         <Text style={EstiloApp.text}>Nome</Text>
-                        <TextInput style={EstiloApp.inputText} placeholder= {selectedCard.nome} onChangeText={(text) => setNome(text)}/>
+                        <TextInput style={EstiloApp.inputText} placeholder={useSelector((state) => state.selected_card.nome)} onChange={(text) => setNome(text)}/>
 
                         <Text style={EstiloApp.text}>Data</Text>
                         <View style={EstiloApp.inputText}>
@@ -51,8 +33,8 @@ const ModificarPesquisa = (props) => {
 
                         <Text style={EstiloApp.text}>Imagem</Text>
 
-                        <Botao cor="#37BD6D" tamanho={34} conteudo="SALVAR" onPress={() => model.updatePesquisas(selectedCard.id, { nome: nome, data: inputDate })}/>
-                        <Botao cor="#FF0000" tamanho={34} conteudo="DELETAR" onPress={() => model.deletePesquisas(selectedCard.id)}/>
+                        <Botao cor="#37BD6D" tamanho={34} conteudo="SALVAR" onPress={() => model.updatePesquisas(id, { nome: nome, data: inputDate })}/>
+                        <Botao cor="#FF0000" tamanho={34} conteudo="DELETAR" onPress={() => model.deletePesquisas(id)}/>
 
                     </View>
                 </View>

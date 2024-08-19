@@ -5,19 +5,20 @@ import EstiloApp from '../styles/style'
 import React from 'react'
 import Opcao from '../components/Opcao'
 import model from '../firebase/model'
+import { useSelector } from 'react-redux'
 
 const ColetaDados = (props) => {
-  const { selectedCard } = props.route.params;
+  const id = useSelector((state) => state.selected_card.id)
 
   return (
     <View style={EstiloApp.background}>
-      <Text style={EstiloApp.textPrincipal}>O que você achou do {selectedCard.nome}?</Text>
+      <Text style={EstiloApp.textPrincipal}>O que você achou do {useSelector((state) => state.selected_card.nome)}?</Text>
       <View style={EstiloApp.menu}>
-        <Opcao imagem={Icons.Pessimo} onPress={() => model.incPesquisa(selectedCard.id, 0)}/>
-        <Opcao imagem={Icons.Ruim} onPress={() => model.incPesquisa(selectedCard.id, 1)}/>
-        <Opcao imagem={Icons.Neutro} onPress={() => model.incPesquisa(selectedCard.id, 2)}/>
-        <Opcao imagem={Icons.Bom} onPress={() => model.incPesquisa(selectedCard.id, 3)}/>
-        <Opcao imagem={Icons.Excelente} onPress={() => model.incPesquisa(selectedCard.id, 4)}/>
+        <Opcao imagem={Icons.Pessimo} onPress={() => model.incPesquisa(id, 0)}/>
+        <Opcao imagem={Icons.Ruim} onPress={() => model.incPesquisa(id, 1)}/>
+        <Opcao imagem={Icons.Neutro} onPress={() => model.incPesquisa(id, 2)}/>
+        <Opcao imagem={Icons.Bom} onPress={() => model.incPesquisa(id, 3)}/>
+        <Opcao imagem={Icons.Excelente} onPress={() => model.incPesquisa(id, 4)}/>
       </View>
     </View>
   );

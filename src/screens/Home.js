@@ -11,18 +11,23 @@ import model from '../firebase/model';
 
 import { Searchbar } from 'react-native-paper';
 
+import { useDispatch } from 'react-redux'
+import { reducerSetSelectedCard } from '../components/redux/selectedCardSlice'
+import { useFocusEffect } from '@react-navigation/native';
+
 const Home = (props) => {
 
-    let [selectedCard, setSelectedCard] = useState(null);
     const [cards, setCards] = useState([]);
+
+    const dispatch = useDispatch()
 
     const goTo = (Tela) => {
         props.navigation.navigate(Tela);
     };
 
     const handlePress = (pesquisa) => {
-        setSelectedCard(pesquisa);
-        props.navigation.navigate('Acoes Pesquisa', {selectedCard: pesquisa});
+        dispatch(reducerSetSelectedCard({id: pesquisa.id, nome: pesquisa.nome, data: JSON.stringify(pesquisa.data), imagem: pesquisa.url, ratings: pesquisa.ratings}))
+        props.navigation.navigate('Acoes Pesquisa');
     };
 
     const getCards = async () => {
@@ -39,9 +44,11 @@ const Home = (props) => {
         setCards(cardElements);
     };
 
-    useEffect(() => {
-        getCards();
-    }, []);
+    useFocusEffect(
+        React.useCallback(() => {
+            getCards();
+        }, [])
+    );
 
     return (
         <View style={EstiloApp.background}>
