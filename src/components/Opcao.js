@@ -2,7 +2,7 @@
 import { TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import React from 'react';
 
-const Botao = (props) => {
+const Opcao = (props) => {
 
     const { imagem, descricao, onPress } = props;
 
@@ -30,4 +30,4 @@ const Botao = (props) => {
     );
 };
 
-export default Botao;
+export default Opcao;

@@ -20,9 +20,9 @@ const Home = (props) => {
         props.navigation.navigate(Tela);
     };
 
-    const handlePress = (nome, data, imagem) => {
-        setSelectedCard({ nome, data, imagem });
-        props.navigation.navigate('Acoes Pesquisa', { selectedCard: { nome, data, imagem } });
+    const handlePress = (pesquisa) => {
+        setSelectedCard(pesquisa);
+        props.navigation.navigate('Acoes Pesquisa', {selectedCard: pesquisa});
     };
 
     const getCards = async () => {
@@ -33,7 +33,7 @@ const Home = (props) => {
                 nome={pesquisa.nome}
                 data={pesquisa.data}
                 imagem={pesquisa.url}
-                onPress={() => handlePress(pesquisa.nome, pesquisa.data, pesquisa.imagem)}
+                onPress={() => handlePress(pesquisa)}
             />
         ));
         setCards(cardElements);

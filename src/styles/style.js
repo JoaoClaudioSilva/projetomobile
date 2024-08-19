@@ -11,6 +11,7 @@ const EstiloApp = StyleSheet.create({
         marginVertical: 20,
         alignSelf: 'center',
         width: '90%',
+        flex: 1
     },
     text: {
         color:'#FFFFFF',
@@ -27,6 +28,13 @@ const EstiloApp = StyleSheet.create({
         height: 60,
         borderRadius: 0,
         textAlignVertical: 'center',
+    },
+    menu: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: '#372775',
     },
 });
 

@@ -28,7 +28,6 @@ const EstiloCard = StyleSheet.create({
     imagem: {
         width: 150,
         height: 150,
-        backgroundColor: 'black',
     },
     card: {
         width: 300,
