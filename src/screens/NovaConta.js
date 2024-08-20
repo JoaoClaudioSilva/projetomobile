@@ -4,7 +4,7 @@ import Botao from '../components/Botao';
 import { useState } from 'react';
 import React from 'react';
 import { PaperProvider, MD3LightTheme as DefaultTheme } from 'react-native-paper';
-import validate from '../scripts/validate';
+
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 

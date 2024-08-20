@@ -24,11 +24,11 @@ const ModificarPesquisa = (props) => {
 
                     <View name="Nome">
                         <Text style={EstiloApp.text}>Nome</Text>
-                        <TextInput style={EstiloApp.inputText} placeholder={useSelector((state) => state.selected_card.nome)} onChange={(text) => setNome(text)}/>
+                        <TextInput style={EstiloApp.inputText} placeholder={useSelector((state) => state.selected_card.nome)} onChangeText={(text) => setNome(text)}/>
 
                         <Text style={EstiloApp.text}>Data</Text>
                         <View style={EstiloApp.inputText}>
-                            <DatePickerInput style={EstiloApp.inputText} locale="en" label="Data" value={inputDate} defaultValue={''} onChange={(date) => setInputDate(date)} inputMode="start"/>
+                            <DatePickerInput style={EstiloApp.inputText} locale="pt-BR" label="Data" value={inputDate} defaultValue={''} onChange={(date) => setInputDate(date)} inputMode="start"/>
                         </View>
 
                         <Text style={EstiloApp.text}>Imagem</Text>
